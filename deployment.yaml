@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vote-app
+  labels:
+    app: vote-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: vote-app
+  template:
+    metadata:
+      labels:
+        app: vote-app
+    spec:
+      containers:
+      - name: vote-app
+        image: gcr.io/voting-container-demo/vote-app-gke
+        ports:
+        - containerPort: 5000
+        env:
+          - name: PORT
+            value: "5000"
