@@ -11,21 +11,21 @@ pipeline {
         stage("Build the App"){
           steps{
             echo "Building the images"
-            sh "sudo docker build -t vote-app ."
+            sh "docker build -t vote-app ."
           }
         }
 
         stage("Run the app"){
           steps{
             echo "running the container"
-            sh "sudo docker run -d -p 5000:5000 vote-app:latest"
+            sh "docker run -d -p 5000:5000 vote-app:latest"
           }
         }
 
         stage("Copy Html file into nginx directory"){
           steps{
             echo "copy file to nginx directory /usr/share/nginx/html"
-            sh "sudo cp -rf index.html main.js main.css /usr/share/nginx/html"
+            sh "cp -rf index.html main.js main.css /usr/share/nginx/html"
           }
         }
     }
