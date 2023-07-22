@@ -29,7 +29,7 @@ Install Nginx reverse proxy to make this application available.
 `sudo apt-get update`
 `sudo apt install nginx`
 
-Update the server in nginx.conf file present in /etc/nginx/ directory [Cent OS or Amazon Linux]
+Update the server with location `/api` in nginx.conf file present in /etc/nginx/ directory [Cent OS or Amazon Linux]
 ```
 server {
         listen       80;
