@@ -19,7 +19,7 @@ docker build -t vote-app .
 
 3. Run the app
 ```
-docker run -d -p 8000:8000 vote-app:latest
+docker run -d -p 5000:5000 vote-app:latest
 ```
 
 ## Nginx
@@ -29,7 +29,7 @@ Install Nginx reverse proxy to make this application available.
 `sudo apt-get update`
 `sudo apt install nginx`
 
-Update the server with location `/api` in nginx.conf file present in /etc/nginx/ directory [Cent OS or Amazon Linux]
+Update the server with `location /api` in nginx.conf file present in /etc/nginx/ directory [Cent OS or Amazon Linux]
 ```
 server {
         listen       80;
